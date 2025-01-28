@@ -14,7 +14,7 @@ app.createServer = () => {
     })
 }
 
-//handle  request response
+//handle request response
 app.handleReqRes = handleReqRes;
 
 // start the server

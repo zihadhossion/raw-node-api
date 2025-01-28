@@ -38,9 +38,8 @@ utilities.createRandomString = (strLength) => {
             output += randomCharacter;
         }
         return output;
-    } else {
-
     }
+    return false;
 }
 
 module.exports = utilities;

@@ -9,8 +9,6 @@ const { parseJSON } = require('./utilities');
 const handler = {};
 
 handler.handleReqRes = (req, res) => {
-    //request handling
-
     //get url and parse it
     const parsedUrl = url.parse(req.url, true);
     const path = parsedUrl.pathname;
