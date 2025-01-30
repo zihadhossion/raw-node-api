@@ -1,21 +1,19 @@
 //dependencies
-const http = require("http");
-const { handleReqRes } = require('./helpers/handleReqRes');
-const environment = require("./helpers/environments");
+const server = require('./lib/server');
+const worker = require('./lib/worker');
 
 //app object
 const app = {};
 
-//create server
-app.createServer = () => {
-    const server = http.createServer(app.handleReqRes);
-    server.listen(environment.port, () => {
-        console.log(`listening to port ${environment.port}`);
-    })
+app.init = () => {
+    //start the server
+    server.init();
+
+    //start the workers
+    worker.init();
 }
 
-//handle request response
-app.handleReqRes = handleReqRes;
+app.init();
 
-// start the server
-app.createServer();
+//export the app
+module.exports = app;
